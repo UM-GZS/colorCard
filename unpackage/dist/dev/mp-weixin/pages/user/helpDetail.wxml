@@ -1,0 +1,1 @@
+<view><view class="title">旋转放大缩小模型</view><view class="content"><view class="content-step">第一步：点击小程序下方【配色】选择房屋模型</view><view class="content-step">第二步：滑动屏幕即可旋转模型</view><view class="content-step">第三步：拉大和缩小屏幕控制模型大小</view><view class="content-image"><image src="http://rf7ocvhsf.hn-bkt.clouddn.com/colorCard/user/detail01.png" mode="widthFix"></image></view></view></view>

@@ -1,0 +1,1 @@
+<view><view class="head-box"><view class="head-card"><view class="card-title">绑定您的电子色卡</view><view class="card-info">欢迎绑定!</view><view class="card-input"><input placeholder="请输入您要绑定的色卡"/></view><view class="card-button">绑定</view></view></view></view>
