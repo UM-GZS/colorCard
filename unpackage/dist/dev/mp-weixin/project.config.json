@@ -29,12 +29,11 @@
       "outputPath": ""
     },
     "disableUseStrict": false,
-    "useCompilerPlugins": false,
-    "minifyWXML": true
+    "useCompilerPlugins": false
   },
   "compileType": "miniprogram",
-  "libVersion": "2.25.0",
-  "appid": "wx1e7a06f5f1eff60c",
+  "libVersion": "",
+  "appid": "touristappid",
   "projectname": "colorCard",
   "condition": {
     "miniprogram": {
@@ -42,6 +41,11 @@
         {
           "name": "产品",
           "pathName": "pages/prod/index",
+          "query": ""
+        },
+        {
+          "name": "登录",
+          "pathName": "pages/user/login",
           "query": ""
         }
       ]

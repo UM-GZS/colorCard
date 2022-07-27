@@ -1,4 +1,9 @@
 import App from './App'
+import * as http from './utils/http' // http请求接口
+import config from '@/config' // 配置
+
+Vue.prototype.$http = http
+Vue.prototype.$config = config
 
 // #ifndef VUE3
 import Vue from 'vue'

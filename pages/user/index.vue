@@ -2,7 +2,7 @@
 	<view>
 		<view class="user-box">
 			<view class="user-info">
-				<view class="info-avatar">
+				<view class="info-avatar" @click="toUrl('/pages/user/login')">
 					<image src="http://rf7ocvhsf.hn-bkt.clouddn.com/colorCard/user/avatar.jpeg"></image>
 				</view>
 				<view class="info-detail">
@@ -30,23 +30,23 @@
 		data() {
 			return {
 				navList: [{
-					url: 'http://rf7ocvhsf.hn-bkt.clouddn.com/colorCard/user/color.png',
+					url: '../../static/image/user/color.png',
 					name: '发色卡',
 					page: '/pages/user/invite'
 				},{
-					url: 'http://rf7ocvhsf.hn-bkt.clouddn.com/colorCard/user/bind.png',
+					url: '../../static/image/user/bind.png',
 					name: '绑定色卡',
 					page: '/pages/user/bind'
 				},{
-					url: 'http://rf7ocvhsf.hn-bkt.clouddn.com/colorCard/user/test.png',
+					url: '../../static/image/user/test.png',
 					name: '体验一下',
 					page: '/pages/user/invite'
 				},{
-					url: 'http://rf7ocvhsf.hn-bkt.clouddn.com/colorCard/user/help.png',
+					url: '../../static/image/user/help.png',
 					name: '帮助中心',
 					page: '/pages/user/help'
 				},{
-					url: 'http://rf7ocvhsf.hn-bkt.clouddn.com/colorCard/user/about.png',
+					url: '../../static/image/user/about.png',
 					name: '电子发色',
 					page: '/pages/user/about'
 				}]
@@ -72,7 +72,6 @@
 		width: 100%;
 		height: 300rpx;
 		position: relative;
-		z-index: -1;
 		overflow: hidden;
 
 		.user-info {

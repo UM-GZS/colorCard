@@ -3,19 +3,22 @@
 		<view class="swiper-box">
 			<swiper class="swiper-list" circular :indicator-dots="indicatorDots" :autoplay="autoplay" :interval="interval" :duration="duration" indicator-active-color="#fff">
 				<swiper-item>
-					<image class="swiper-item" src="http://rf7ocvhsf.hn-bkt.clouddn.com/colorCard/prod/banner.png"></image>
+					<image class="swiper-item" :src="detail.image"></image>
 				</swiper-item>
 			</swiper>
 		</view>
 		<view class="content">
-			<view class="content-title">电子色卡小程序</view>
+			<view class="content-title">{{detail.name}}</view>
 			<view class="content-info">
 				<view class="info-line"></view>
 				<view class="info-name">内容详情</view>
 			</view>
-			<view class="content-image">
-				<image src="http://rf7ocvhsf.hn-bkt.clouddn.com/colorCard/tool/detail01.png" mode="widthFix"></image>
+			<view class="content-detail">
+				<view v-html="detail.content"></view>
 			</view>
+			<!-- <view class="content-image">
+				<image src="http://rf7ocvhsf.hn-bkt.clouddn.com/colorCard/tool/detail01.png" mode="widthFix"></image>
+			</view> -->
 		</view>
 	</view>
 </template>
@@ -27,8 +30,36 @@
 				indicatorDots: true,
 				autoplay: true,
 				interval: 2000,
-				duration: 500
+				duration: 500,
+				cid: null,
+				detail: {}
 			};
+		},
+		onLoad(options) {
+			if (options.id) {
+				this.cid = options.id;
+				this.getArticle();
+			}
+		},
+		methods: {
+			getArticle() {
+				this.$http
+					.getArticle({ cid: this.cid })
+				 .then((res) => {
+				 	if (res.code == 1) {
+							this.detail = res.data[0];
+						} else {
+							uni.showToast({
+								title: "网络错误，请重试~",
+								icon: "none",
+								duration: 2000,
+							});
+						}
+					})
+					.catch((error) => {
+						console.log(error);
+					});
+			}
 		}
 	}
 </script>
@@ -76,6 +107,14 @@
 			.info-name {
 				margin-left: 10rpx;
 				font-size: 32rpx;
+			}
+		}
+		
+		.content-detail {
+			padding: 20rpx;
+			
+			view {
+				width: 100%;
 			}
 		}
 		

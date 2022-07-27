@@ -57,13 +57,14 @@ page {
   font-size: 30rpx;
 }
 .color-list {
-  padding: 0 8rpx;
+  padding: 0 10rpx;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
 }
 .color-list .color-item {
-  margin: 0 5rpx 15rpx;
+  margin: 0 0 15rpx;
   width: 140rpx;
   height: 150rpx;
   background: #EEEEEE;

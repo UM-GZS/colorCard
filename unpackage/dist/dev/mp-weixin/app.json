@@ -12,7 +12,8 @@
     "pages/user/helpDetail",
     "pages/tool/calculate",
     "pages/tool/colorList",
-    "pages/prod/detail"
+    "pages/prod/detail",
+    "pages/user/login"
   ],
   "subPackages": [],
   "window": {
@@ -59,6 +60,5 @@
       }
     ]
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap.json"
+  "usingComponents": {}
 }

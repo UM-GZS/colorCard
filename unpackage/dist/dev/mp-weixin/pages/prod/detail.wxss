@@ -61,6 +61,12 @@ page {
   margin-left: 10rpx;
   font-size: 32rpx;
 }
+.content .content-detail {
+  padding: 20rpx;
+}
+.content .content-detail view {
+  width: 100%;
+}
 .content .content-image {
   width: 100%;
   padding: 20rpx 0;

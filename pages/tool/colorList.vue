@@ -73,6 +73,81 @@
 				},{
 					color: '#F5BE6E',
 					name: '0113'
+				},{
+					color: '#D59C4F',
+					name: '0114'
+				},{
+					color: '#F6B65C',
+					name: '0115'
+				},{
+					color: '#EAC181',
+					name: '0116'
+				},{
+					color: '#FFB866',
+					name: '0124'
+				},{
+					color: '#FFC289',
+					name: '0133'
+				},{
+					color: '#FFAB65',
+					name: '0134'
+				},{
+					color: '#E7CDB2',
+					name: '0141'
+				},{
+					color: '#EFC299',
+					name: '0142'
+				},{
+					color: '#F4A96F',
+					name: '0143'
+				},{
+					color: '#D48751',
+					name: '0144'
+				},{
+					color: '#F19E5C',
+					name: '0145'
+				},{
+					color: '#F0B482',
+					name: '0146'
+				},{
+					color: '#D2B89F',
+					name: '0151'
+				},{
+					color: '#D2AA87',
+					name: '0152'
+				},{
+					color: '#B98860',
+					name: '0153'
+				},{
+					color: '#8B6149',
+					name: '0154'
+				},{
+					color: '#A57453',
+					name: '0155'
+				},{
+					color: '#D59C71',
+					name: '0156'
+				},{
+					color: '#F09060',
+					name: '0185'
+				},{
+					color: '#D49375',
+					name: '0196'
+				},{
+					color: '#E8C8B9',
+					name: '0221'
+				},{
+					color: '#ECB7A5',
+					name: '0222'
+				},{
+					color: '#EA927C',
+					name: '0223'
+				},{
+					color: '#C76B56',
+					name: '0224'
+				},{
+					color: '#EA8267',
+					name: '0225'
 				}]
 			};
 		}
@@ -120,13 +195,14 @@
 	}
 	
 	.color-list {
-		padding: 0 8rpx;
+		padding: 0 10rpx;
 		display: flex;
 		flex-wrap: wrap;
+		justify-content: space-between;
 		align-items: center;
 		
 		.color-item {
-			margin: 0 5rpx 15rpx;
+			margin: 0 0 15rpx;
 			width: 140rpx;
 			height: 150rpx;
 			background: #EEEEEE;

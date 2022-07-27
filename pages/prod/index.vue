@@ -22,10 +22,11 @@
 		<template v-else-if="navIndex === 1">
 			<view class="prod-list">
 				<view class="prod-item" v-for="(item, index) in prodList" :key="index" @click="toDetail(item)">
-					<image :src="item.url"></image>
+					<image :src="item.image"></image>
 					<view class="prod-name">{{item.name}}</view>
 				</view>
 			</view>
+			<view class="page-more">没有更多内容了</view>
 		</template>
 		<template v-else>
 			<view class="about-box">
@@ -51,25 +52,37 @@
 				autoplay: true,
 				interval: 2000,
 				duration: 500,
-				prodList: [{
-					url: 'http://rf7ocvhsf.hn-bkt.clouddn.com/colorCard/prod/list01.png',
-					name: '电子色卡小程序'
-				},{
-					url: 'http://rf7ocvhsf.hn-bkt.clouddn.com/colorCard/prod/list02.png',
-					name: '电子色卡软件续费'
-				},{
-					url: 'http://rf7ocvhsf.hn-bkt.clouddn.com/colorCard/prod/list03.png',
-					name: '电子色卡颜色制作'
-				}]
+				prodList: []
 			};
+		},
+		onLoad() {
+			this.getProduct();
 		},
 		methods: {
 			selectNav(index) {
 				this.navIndex = index;
 			},
+			getProduct() {
+				this.$http
+					.getProduct()
+				 .then((res) => {
+				 	if (res.code == 1) {
+							this.prodList = res.data;
+						} else {
+							uni.showToast({
+								title: "网络错误，请重试~",
+								icon: "none",
+								duration: 2000,
+							});
+						}
+					})
+					.catch((error) => {
+						console.log(error);
+					});
+			},
 			toDetail(item) {
 				uni.navigateTo({
-					url: './detail'
+					url: './detail?id=' + item.id
 				})
 			}
 		}
@@ -201,5 +214,14 @@
 			width: 100%;
 			height: 100%;
 		}
+	}
+	
+	.page-more {
+		width: 100%;
+		height: 100rpx;
+		line-height: 100rpx;
+		text-align: center;
+		font-size: 28rpx;
+		color: #888888;
 	}
 </style>

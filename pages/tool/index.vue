@@ -101,10 +101,10 @@
 	}
 
 	.tool-list {
-		padding: 20rpx;
+		padding: 10rpx 20rpx 10rpx;
 
 		.tool-item {
-			margin: 20rpx 0;
+			margin: 30rpx 0;
 			padding: 0 20rpx;
 			height: 280rpx;
 			display: flex;

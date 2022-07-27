@@ -75,10 +75,10 @@ page {
 }
 .card .card-button .button-item {
   margin: 40rpx auto;
+}
+.card .card-button .button-item button {
   width: 350rpx;
   height: 80rpx;
-  line-height: 80rpx;
-  text-align: center;
   font-size: 32rpx;
   color: #ffffff;
   background: #3B69DC;

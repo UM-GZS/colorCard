@@ -9144,6 +9144,182 @@ function normalizeComponent (
 }
 
 
+/***/ }),
+/* 12 */
+/*!*******************************************!*\
+  !*** E:/item/web/colorCard/utils/http.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.getColorCardType = getColorCardType;exports.getColorCard = getColorCard;exports.getModelingType = getModelingType;exports.getModeling = getModeling;exports.getProduct = getProduct;exports.getArticle = getArticle;var _request = _interopRequireDefault(__webpack_require__(/*! ./request */ 13));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+// 获取色卡分类
+function getColorCardType(params) {
+  return new Promise(function (resolve, reject) {
+    _request.default.get("/index/getColorCardType", params).then(function (result) {
+      resolve(result);
+    }).catch(function (err) {
+      reject(err);
+    });
+  });
+}
+
+// 获取色卡
+function getColorCard(params) {
+  return new Promise(function (resolve, reject) {
+    _request.default.get("/index/getColorCard", params).then(function (result) {
+      resolve(result);
+    }).catch(function (err) {
+      reject(err);
+    });
+  });
+}
+
+// 获取配色分类
+function getModelingType(params) {
+  return new Promise(function (resolve, reject) {
+    _request.default.get("/index/getModelingType", params).then(function (result) {
+      resolve(result);
+    }).catch(function (err) {
+      reject(err);
+    });
+  });
+}
+
+// 获取配色
+function getModeling(params) {
+  return new Promise(function (resolve, reject) {
+    _request.default.get("/index/getModeling", params).then(function (result) {
+      resolve(result);
+    }).catch(function (err) {
+      reject(err);
+    });
+  });
+}
+
+// 获取产品
+function getProduct(params) {
+  return new Promise(function (resolve, reject) {
+    _request.default.get("/index/getProduct", params).then(function (result) {
+      resolve(result);
+    }).catch(function (err) {
+      reject(err);
+    });
+  });
+}
+
+// 获取文章
+function getArticle(params) {
+  return new Promise(function (resolve, reject) {
+    _request.default.get("/index/getArticle", params).then(function (result) {
+      resolve(result);
+    }).catch(function (err) {
+      reject(err);
+    });
+  });
+}
+
+/***/ }),
+/* 13 */
+/*!**********************************************!*\
+  !*** E:/item/web/colorCard/utils/request.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _config = _interopRequireDefault(__webpack_require__(/*! @/config */ 14));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _slicedToArray(arr, i) {return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();}function _nonIterableRest() {throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}function _iterableToArrayLimit(arr, i) {if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;var _arr = [];var _n = true;var _d = false;var _e = undefined;try {for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {_arr.push(_s.value);if (i && _arr.length === i) break;}} catch (err) {_d = true;_e = err;} finally {try {if (!_n && _i["return"] != null) _i["return"]();} finally {if (_d) throw _e;}}return _arr;}function _arrayWithHoles(arr) {if (Array.isArray(arr)) return arr;} // 配置文件
+// import storage from "./storage"; // 缓存封装
+var _default =
+{
+  console: function console(options) {
+    if (_config.default.debug) {
+      // console.log("<<===============================================>>");
+      // console.log("request start");
+      // console.log("header" + JSON.stringify(options.header));
+      // console.log("method: " + options.method + " URL: " + options.url);
+      // console.log(options.data);
+      // console.log("request end");
+      // console.log("<<===============================================>>");
+    }
+  },
+  domain: function domain() {
+    return _config.default.uni_app_web_api_url.replace("api", "");
+  },
+  send: function send() {var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+    // loading加载
+    uni.showLoading({
+      title: '加载中' });
+
+
+    // 拼接路劲，下面的配置文件会提到
+    options.url = _config.default.uni_app_web_api_url + '' + options.url;
+    // 请求方式
+    options.method = options.method || "GET";
+
+    // 这里看项目的情况来定，如果是没有token，那就删除这里，上面的storage也不需要引入
+    // let users = storage.getJson("users");
+    // if(users != null){
+    // 	options.header = { "Auth-Token" : users.token };
+    // }
+
+    this.console(options); // 打印请求数据，调试用，上线可以注释
+
+    // 发起Promise请求
+    return new Promise(function (resolve, reject) {
+      uni.request(options).then(function (data) {var _data = _slicedToArray(
+        data, 2),error = _data[0],res = _data[1];
+        if (error != null) {
+          reject(error);
+        } else {
+          // 相应拦截、根据后端的状态码来写，可以自行判断和封装
+          if (res.data.status == '-1001') {
+            uni.hideLoading();
+            uni.navigateTo({
+              url: '/pages/Login/login/login' });
+
+          } else {
+            resolve(res.data);
+          }
+        }
+        uni.hideLoading();
+      });
+    });
+  },
+  get: function get() {var url = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    return this.send({
+      url: url,
+      data: data });
+
+  },
+  post: function post() {var url = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    return this.send({
+      url: url,
+      data: data,
+      method: "POST" });
+
+  } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 14 */
+/*!***************************************!*\
+  !*** E:/item/web/colorCard/config.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  web_name: "电子色卡",
+
+  uni_app_web_url: "http://dsz.tenscorestec.com/", // h5域名PC域名，用于分享图片或者拼接图片时使用，结尾必须加 “/”
+  uni_app_web_api_url: "http://dsz.tenscorestec.com/index.php/api", // 请求接口的地址
+
+  debug: true };exports.default = _default;
+
 /***/ })
 ]]);
 //# sourceMappingURL=../../.sourcemap/mp-weixin/common/vendor.js.map

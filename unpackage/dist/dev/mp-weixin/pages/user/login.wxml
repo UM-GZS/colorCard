@@ -1,0 +1,1 @@
+<view><view class="head-box"><view class="head-card"><view class="card-title">登陆电子色卡</view><view class="card-info">欢迎登陆!</view><view class="card-input"><input placeholder="请输入账号"/></view><view class="card-input"><input placeholder="请输入密码"/></view><view class="card-button">提交</view></view></view></view>
