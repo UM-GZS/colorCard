@@ -211,7 +211,7 @@
 				line-height: 100rpx;
 				font-size: 32rpx;
 				color: #3B69DC;
-				border: 1px solid #DCDCDC;
+				border-bottom: 1px solid #DCDCDC;
 			}
 			
 			.result-item {
